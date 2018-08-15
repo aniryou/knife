@@ -1,0 +1,1 @@
+jq --raw-output 'select(.text!=null) | {text:.text, categories:[.category[]]} | {text:.text, categories:.categories | join(";")} | [.text, .categories] | @tsv'
